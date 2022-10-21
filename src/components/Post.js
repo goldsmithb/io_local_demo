@@ -28,9 +28,11 @@ export default function Post() {
       <div className="post__content">Main content</div>
       <div className="post__footer">
         <span>Author</span>
-        <div>upvote</div>
-        <div>downvote</div>
-        <div>comments</div>
+        <div>
+          <div>upvote</div>
+          <div>downvote</div>
+          <div>comments</div>
+        </div>
       </div>
     </div>
   )
