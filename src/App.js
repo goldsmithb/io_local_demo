@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Post from './components/Post'
+import PostContainer from './components/PostContainer'
 import Navbar from './components/Navbar';
 
 function App() {
@@ -12,9 +12,7 @@ function App() {
 
       <main>
         <article id="main">Main Contenet
-          <Post />
-          <Post />
-          <Post />
+          <PostContainer />
         </article>
         <aside className="sidebar1">Sidebar 1 (nav)</aside>
         <aside className="sidebar2">Sidebar 2 (ads)</aside>
