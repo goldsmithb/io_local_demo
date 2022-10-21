@@ -23,7 +23,7 @@ const styles = {
   }
 }
 
-const Navbar = () => {
+export default function Navbar(){
   return (
     <header style={styles.header}>
       <div className="wireframe" style={styles.header_logo}>Logo</div>
@@ -35,5 +35,3 @@ const Navbar = () => {
     </header>
   );
 }
-
-ReactDOM.render(<Navbar />, document.getElementById('header'));

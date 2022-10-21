@@ -1,5 +1,7 @@
 /*
 A Basic Post Component
+
+Post will have a minimum width and height but otherwise flexibility
 */
 
 import { useState } from 'react'
@@ -10,22 +12,29 @@ export default function Post() {
   const author = "This is a website for learning react.";
   const content = "Lorem ipsum";
 
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const handleClick = (e) => {
-    console.log("Clicked!");
-    console.log("The site title is:", title);
-    console.log(e);
+  function clickFullscreen() { 
+    isFullscreen ? setIsFullscreen(false) : setIsFullscreen(true);
   }
 
+  /*
+    If fullscreen is clicked, render the component like a modal
+      i.e. if isFullscreen:
+        whole thing encapsulated in a backdrop div
+
+   */
+
   return (
-    <div className="post wireframe">
+    <div className={"post wireframe " + (isFullscreen ? "fullscreen" : "")}>
       <div className="post__header">
-        <div>Icon</div>
+        <div className="post__header-icon wireframe">Icon</div>
         <span>Title</span>
-        <div>FS Button</div>
-      </div>
+        <input onClick={clickFullscreen} type="image" id="image" alt="Full screen" src={require("../media/fullscreen_button.png")} />
+        </div>
+
       <div className="post__content">Main content</div>
+      
       <div className="post__footer">
         <span>Author</span>
         <div className="post__controls">

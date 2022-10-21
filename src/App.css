@@ -1,8 +1,11 @@
+/* We will use this as our global stylesheet */
+
 * {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   box-sizing: border-box;
 }
 
+/* A class for wireframe overlay for element spacing*/
 .wireframe {outline: 2px solid gray;
   background:
      linear-gradient(to top right,
@@ -13,7 +16,8 @@
         gray 50.1%, transparent 50.1%);
 }
 
-html { font-size: 10px; }
+/*  Setting our em  */
+html { font-size: 14px; }
 
 #root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,17 +25,18 @@ html { font-size: 10px; }
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0;
   border: solid 1pt red;
 }
+/*
 h1 { font-size: 4rem; margin-bottom: .5em;}
 h2 { font-size: 3rem; margin: 1em 0 .25em;}
 h3 { font-size: 2.5rem; margin-bottom: .25em;}
 p { margin: 0 0 1em; }
+*/
 
 main {
   display: flex;
