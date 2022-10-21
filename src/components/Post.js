@@ -3,14 +3,7 @@ A Basic Post Component
 */
 
 import { useState } from 'react'
-
-const styles = {
-
-  button: {
-    fontSize: "18px",
-    backgroundColor: "#333"
-  }
-}
+import './Post.css'
 
 export default function Post() {
   const title = "Example Post";
@@ -26,29 +19,19 @@ export default function Post() {
   }
 
   return (
-    <div>
-      <div>Icon, Title, FS</div>
-      <div>Main content</div>
-      <div>Author, upvote, downvote, comments</div>
+    <div className="post wireframe">
+      <div className="post__header">
+        <div>Icon</div>
+        <span>Title</span>
+        <div>FS Button</div>
+      </div>
+      <div className="post__content">Main content</div>
+      <div className="post__footer">
+        <span>Author</span>
+        <div>upvote</div>
+        <div>downvote</div>
+        <div>comments</div>
+      </div>
     </div>
-    /*
-    <div className="banner">
-      <h2>{title.toUpperCase()}</h2>
-      <p>{"by " + author}</p>
-      <p>Today's date is: {new Date().toDateString()}</p>
-      <p>Random Number: {Math.random() * 100}</p>
-      <a href={address}>Visit the Net Ninja Site</a>
-      <br></br>
-      <button style={styles.button} onClick={(e) => console.log(e) }>Click me</button>
-      <button onClick={handleClick}>Click me - I use a handler defined outside the xml block</button>
-
-      <div>another div?</div>
-    </div>
-    // NO! <div>another div?</div>
-    */
   )
 }
-
-// render the component to the dom
-//   render <component> in <place in dom>
-//ReactDOM.render(<Post />, document.getElementById('main'))

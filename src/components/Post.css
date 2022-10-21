@@ -1,0 +1,9 @@
+.post {
+  margin: 20px 60px;
+  padding: 10px;
+}
+
+.post__header, .post__footer {
+  display: flex;
+  justify-content: space-between;
+}

@@ -12,9 +12,11 @@ function App() {
       <main>
         <article id="main">Main Contenet
           <Post />
+          <Post />
+          <Post />
         </article>
-        <aside class="sidebar1">Sidebar 1 (nav)</aside>
-        <aside class="sidebar2">Sidebar 2 (ads)</aside>
+        <aside className="sidebar1">Sidebar 1 (nav)</aside>
+        <aside className="sidebar2">Sidebar 2 (ads)</aside>
 
 
       </main>
