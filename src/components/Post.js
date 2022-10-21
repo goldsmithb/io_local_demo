@@ -7,23 +7,10 @@ Post will have a minimum width and height but otherwise flexibility
 import { useState } from 'react'
 import './Post.css'
 
-export default function Post() {
+export default function Post({ isFullscreen, clickFullscreen }) {
   const title = "Example Post";
   const author = "This is a website for learning react.";
   const content = "Lorem ipsum";
-
-  const [isFullscreen, setIsFullscreen] = useState(false);
-
-  function clickFullscreen() { 
-    isFullscreen ? setIsFullscreen(false) : setIsFullscreen(true);
-  }
-
-  /*
-    If fullscreen is clicked, render the component like a modal
-      i.e. if isFullscreen:
-        whole thing encapsulated in a backdrop div
-
-   */
 
   return (
     <div className={"post wireframe " + (isFullscreen ? "fullscreen" : "")}>
