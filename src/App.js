@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Post from './components/Post'
 
 function App() {
   return (
@@ -9,9 +10,13 @@ function App() {
       <div id="header">Header/ Navigation</div>
 
       <main>
-        <article id="main">Main Contenet</article>
+        <article id="main">Main Contenet
+          <Post />
+        </article>
         <aside class="sidebar1">Sidebar 1 (nav)</aside>
         <aside class="sidebar2">Sidebar 2 (ads)</aside>
+
+
       </main>
         
       <footer>

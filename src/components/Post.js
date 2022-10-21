@@ -12,7 +12,7 @@ const styles = {
   }
 }
 
-const Post = () => {
+export default function Post() {
   const title = "Example Post";
   const author = "This is a website for learning react.";
   const content = "Lorem ipsum";
@@ -51,4 +51,4 @@ const Post = () => {
 
 // render the component to the dom
 //   render <component> in <place in dom>
-ReactDOM.render(<Post />, document.getElementById('main'))
+//ReactDOM.render(<Post />, document.getElementById('main'))
