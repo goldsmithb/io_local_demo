@@ -6,6 +6,7 @@ Post will have a minimum width and height but otherwise flexibility
 
 import { useState } from 'react'
 import './Post.css'
+import fullscreenButtonImg from '../media/fullscreen_button.png';
 
 export default function Post({ isFullscreen, clickFullscreen }) {
   const title = "Example Post";
@@ -17,7 +18,7 @@ export default function Post({ isFullscreen, clickFullscreen }) {
       <div className="post__header">
         <div className="post__header-icon wireframe">Icon</div>
         <span>Title</span>
-        <input onClick={clickFullscreen} type="image" id="image" alt="Full screen" src={require("../media/fullscreen_button.png")} />
+        <input onClick={clickFullscreen} type="image" id="image" alt="Full screen" src={fullscreenButtonImg} />
         </div>
 
       <div className="post__content">Main content</div>
