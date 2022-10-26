@@ -17,6 +17,7 @@ import { useState } from 'react'
 import './Post.css'
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import { setSelectionRange } from '@testing-library/user-event/dist/utils';
+import CommentSection from './CommentSection'
 
 export default function Post({ post, key, isFullscreen, clickFullscreen }) {
   const [id, setId] = useState(post.id);
@@ -25,8 +26,10 @@ export default function Post({ post, key, isFullscreen, clickFullscreen }) {
   const [content, setContent] = useState(post.content);
   const [type, setType] = useState(post.type);
   const [score, setScore] = useState(post.score);
+  const [showComments, setShowComments] = useState(false);
 
   return (
+    <>
     <div key={id} className={"post wireframe " + (isFullscreen ? "fullscreen" : "")}>
       <div className="post__header">
         <div className="post__header-icon wireframe">Icon</div>
@@ -46,5 +49,12 @@ export default function Post({ post, key, isFullscreen, clickFullscreen }) {
         </div>
       </div>
     </div>
+    {showComments && (
+      <div className="comments">
+        <CommentSection />
+      </div>
+    )}
+
+    </>
   )
 }
