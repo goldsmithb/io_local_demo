@@ -15,10 +15,10 @@ export default function NewPostForm({ addNewPost }) {
   }
 
   const handleSubmit = (e) => {
-    console.log(type);
     e.preventDefault();
     const newPost = {
       title: title,
+      id: Math.floor(Math.random()*1000),
       author: "current user",
       content: content,
       type: "social",
