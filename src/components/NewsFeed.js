@@ -72,6 +72,7 @@ export default function NewsFeed() {
 
   const addNewPost = (newPost) => {
     setExamplePosts((prevPosts) => [newPost, ...prevPosts]);
+    setShowNewPostForm(false);
   }
 
   return (
