@@ -12,7 +12,7 @@ function App() {
       <Navbar />
 
       <main>
-        <article id="main">Main Contenet
+        <article id="main">
           <NewsFeed />
         </article>
         <aside className="sidebar1">

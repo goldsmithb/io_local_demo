@@ -78,9 +78,11 @@ export default function NewsFeed() {
   return (
     <div className={styles['news-feed']}>
       {!showNewPostForm && (
-        <button onClick={() => setShowNewPostForm(showNewPostForm? false : true)}>
-          Create New Post
-        </button>
+        <input
+          type="text" 
+          onClick={() => setShowNewPostForm(showNewPostForm? false : true)}
+          placeholder="Write a new post..."
+          className={styles['new-post']}/>
       )}
       {showNewPostForm && <NewPostForm addNewPost={addNewPost} />}
       {examplePosts.map((post) => (

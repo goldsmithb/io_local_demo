@@ -1,4 +1,11 @@
 .news-feed {
   height: 85vh;
   overflow-y: auto;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.new-post {
+  width: 70%;
+  content: "Write a new post..."
 }
