@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import NewsFeed from './components/NewsFeed'
 import Navbar from './components/Navbar';
+import NavSideBar from './components/NavSideBar'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <NewsFeed />
         </article>
         <aside className="sidebar1">
-          {/* <NavSideBar /> */}
+          <NavSideBar />
         </aside>
         <aside className="sidebar2">
            {/* <AddSideBar />  */}
