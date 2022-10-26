@@ -28,7 +28,7 @@ export default function NewsFeed() {
   return (
     <div className="news-feed">
       {examplePosts.map((post) => (
-        <Post post={post} key={Math.floor(Math.random()*1000)} isFullscreen={isFullscreen} clickFullscreen={clickFullscreen}/>
+        <Post key={Math.floor(Math.random()*1000)} post={post} isFullscreen={isFullscreen} clickFullscreen={clickFullscreen}/>
       ))
       // we still need some conditional things for different post types
       }

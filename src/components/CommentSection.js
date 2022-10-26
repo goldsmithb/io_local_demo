@@ -11,8 +11,13 @@ console.log(exampleComments);
 
 export default function CommentSection() {
   return (
-    <div>
-
+    <div className="comment-section">
+      {exampleComments.map((comment) => (
+        <>
+          <span>{comment.author}</span>
+          <p>{comment.content}</p>  
+        </>
+      ))}
     </div>
   )
 }

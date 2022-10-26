@@ -49,11 +49,7 @@ export default function Post({ post, key, isFullscreen, clickFullscreen }) {
         </div>
       </div>
     </div>
-    {showComments && (
-      <div className="comments">
-        <CommentSection />
-      </div>
-    )}
+    {showComments && <CommentSection />}
 
     </>
   )
