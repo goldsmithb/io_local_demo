@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import Post from './Post'
+import NewPostForm from './NewPostForm'
 import './NewsFeed.css'
 
 const examplePostList = [{
@@ -62,6 +63,7 @@ const examplePostList = [{
 
 export default function NewsFeed() {
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showNewPostForm, setShowNewPostForm] = useState(false);
   const [examplePosts, setExamplePosts] = useState(examplePostList);
 
   function clickFullscreen() { 
@@ -70,6 +72,12 @@ export default function NewsFeed() {
 
   return (
     <div className="news-feed">
+      {!showNewPostForm && (
+        <button onClick={() => setShowNewPostForm(showNewPostForm? false : true)}>
+          Create New Post
+        </button>
+      )}
+      {showNewPostForm && <NewPostForm />}
       {examplePosts.map((post) => (
         <Post key={Math.floor(Math.random()*1000)} post={post} isFullscreen={isFullscreen} clickFullscreen={clickFullscreen}/>
       ))

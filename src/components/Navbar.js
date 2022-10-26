@@ -28,9 +28,9 @@ export default function Navbar(){
     <header style={styles.header}>
       <div className="wireframe" style={styles.header_logo}>Logo</div>
       <ul style={styles.header_ul} className="normal-text">
-        <li><a href="#">header link one</a></li>
-        <li><a href="#">header link two</a></li>
-        <li><a href="#">header link three</a></li>
+        <li><a href="#">I/O Local</a></li>
+        <li><a href="#">My Profile</a></li>
+        <li><a href="#">Account Settings</a></li>
       </ul>
     </header>
   );
