@@ -45,7 +45,7 @@ export default function Post({ post, key, isFullscreen, clickFullscreen }) {
           <span className="score">{score}</span>
           <span onClick={() => setScore(score + 1)}>upvote</span>
           <span onClick={() => setScore(score - 1)}>downvote</span>
-          <span>comments</span>
+          <span onClick={()=> setShowComments(showComments? false: true)}>comments</span>
         </div>
       </div>
     </div>
