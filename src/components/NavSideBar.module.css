@@ -1,0 +1,28 @@
+.sidebar, .sidebar ul {
+  list-style-type: none;
+  padding: 0 0 0 20px;
+}
+
+.sidebar {
+  font-size: 1.2em;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.nested li{
+  margin: 5px;
+}
+
+.caret::before {
+  content: "\25B6";
+  margin-left: -15px;
+}
+.caret:hover {
+  cursor: pointer;
+}
+/*  BUG this doesn't work, but why not?  */
+.caret-down::before {
+  transform: rotate(90deg);
+}
