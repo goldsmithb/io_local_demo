@@ -2,7 +2,7 @@ import { useState } from 'react';
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import Post from './Post'
 import NewPostForm from './NewPostForm'
-import './NewsFeed.css'
+import styles from './NewsFeed.module.css'
 
 const examplePostList = [{
   id: Math.floor(Math.random()*1000),
@@ -76,7 +76,7 @@ export default function NewsFeed() {
   }
 
   return (
-    <div className="news-feed">
+    <div className={styles['news-feed']}>
       {!showNewPostForm && (
         <button onClick={() => setShowNewPostForm(showNewPostForm? false : true)}>
           Create New Post
@@ -84,7 +84,9 @@ export default function NewsFeed() {
       )}
       {showNewPostForm && <NewPostForm addNewPost={addNewPost} />}
       {examplePosts.map((post) => (
-        <Post key={Math.floor(Math.random()*1000)} post={post} isFullscreen={isFullscreen} clickFullscreen={clickFullscreen}/>
+        <Post key={post.id} 
+          post={post} isFullscreen={isFullscreen} 
+          clickFullscreen={clickFullscreen}/>
       ))
       // we still need some conditional things for different post types
       }
