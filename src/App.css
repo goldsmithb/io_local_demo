@@ -55,6 +55,11 @@ aside {
 
 .sidebar1 { order: -1; }
 
+.focused {
+  border: 2px solid orangered;
+  border-radius: 15px;;
+}
+
 footer {
   background-color: #b8b8b8;
 }

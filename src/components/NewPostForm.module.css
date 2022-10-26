@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  height: auto;
+}
+
+.content {
+  height:15vh;
+}
+
+#top-bar {
+  display: flex;
+}
+
+.title {
+  flex: 4;
+}
+.content {
+  flex: 1;
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './NewPostForm.module.css'
 
 /**BUG: reset form does not reset the type state */
 
@@ -10,7 +11,7 @@ export default function NewPostForm({ addNewPost }) {
   const resetForm = () => {
     setTitle("");
     setContent("");
-    setType("market");
+    setType("");
   }
 
   const handleSubmit = (e) => {
@@ -28,28 +29,32 @@ export default function NewPostForm({ addNewPost }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        <span>Title:</span>
-        <input 
-          type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title} />
-      </label>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <div id={styles['top-bar']}>
+        <label className={styles.title}>
+          <span>Title:</span>
+          <input 
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title} 
+            className={styles.content}/>
+        </label>
+        <label className={styles.type}>
+          <span>Post type:</span>
+          <select onChange={(e) => setType(e.target.value)}>
+            <option value="social">Social</option>
+            <option value="market">Market</option>
+            <option value="request">Request</option>
+          </select>
+        </label>
+      </div>
+
       <label>
         <span>Content:</span>
         <input 
           type="text" 
           onChange={(e) => setContent(e.target.value)}
           value={content} />
-      </label>
-      <label>
-        <span>Post type:</span>
-        <select onChange={(e) => setType(e.target.value)}>
-          <option value="social">Social</option>
-          <option value="market">Market</option>
-          <option value="request">Request</option>
-        </select>
       </label>
       <button>Submit</button>
     </form>

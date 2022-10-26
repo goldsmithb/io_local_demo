@@ -77,14 +77,17 @@ export default function NewsFeed() {
 
   return (
     <div className={styles['news-feed']}>
-      {!showNewPostForm && (
-        <input
-          type="text" 
-          onClick={() => setShowNewPostForm(showNewPostForm? false : true)}
-          placeholder="Write a new post..."
-          className={styles['new-post']}/>
-      )}
-      {showNewPostForm && <NewPostForm addNewPost={addNewPost} />}
+      <div className={styles['form-field'] + " " + (showNewPostForm ? "focused" : "")}>
+        {!showNewPostForm && (
+          <input
+            type="text" 
+            onClick={() => setShowNewPostForm(showNewPostForm? false : true)}
+            placeholder="Write a new post..."
+            />
+        )}
+        {showNewPostForm && <NewPostForm addNewPost={addNewPost} />}
+      </div>
+      
       {examplePosts.map((post) => (
         <Post key={post.id} 
           post={post} isFullscreen={isFullscreen} 
