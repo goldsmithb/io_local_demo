@@ -2,6 +2,14 @@
 A Basic Post Component
 
 Post will have a minimum width and height but otherwise flexibility
+
+Post content:
+{
+    title: "Example",
+    author: "Bob S.",
+    content: ""...",
+    type: "social" | "market" | "request"
+  }
 */
 
 import { useState } from 'react'
@@ -9,10 +17,6 @@ import './Post.css'
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 
 export default function Post({ isFullscreen, clickFullscreen }) {
-  const title = "Example Post";
-  const author = "This is a website for learning react.";
-  const content = "Lorem ipsum";
-
   return (
     <div className={"post wireframe " + (isFullscreen ? "fullscreen" : "")}>
       <div className="post__header">
