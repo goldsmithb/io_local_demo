@@ -14,8 +14,12 @@ function App() {
         <article id="main">Main Contenet
           <NewsFeed />
         </article>
-        <aside className="sidebar1">Sidebar 1 (nav)</aside>
-        <aside className="sidebar2">Sidebar 2 (ads)</aside>
+        <aside className="sidebar1">
+          {/* <NavSideBar /> */}
+        </aside>
+        <aside className="sidebar2">
+           {/* <AddSideBar />  */}
+        </aside>
 
 
       </main>

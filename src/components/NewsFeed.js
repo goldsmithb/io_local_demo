@@ -66,8 +66,12 @@ export default function NewsFeed() {
   const [showNewPostForm, setShowNewPostForm] = useState(false);
   const [examplePosts, setExamplePosts] = useState(examplePostList);
 
-  function clickFullscreen() { 
+  const clickFullscreen = () => { 
     isFullscreen ? setIsFullscreen(false) : setIsFullscreen(true);
+  }
+
+  const addNewPost = (newPost) => {
+    setExamplePosts((prevPosts) => [newPost, ...prevPosts]);
   }
 
   return (
@@ -77,7 +81,7 @@ export default function NewsFeed() {
           Create New Post
         </button>
       )}
-      {showNewPostForm && <NewPostForm />}
+      {showNewPostForm && <NewPostForm addNewPost={addNewPost} />}
       {examplePosts.map((post) => (
         <Post key={Math.floor(Math.random()*1000)} post={post} isFullscreen={isFullscreen} clickFullscreen={clickFullscreen}/>
       ))
