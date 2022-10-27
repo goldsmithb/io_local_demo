@@ -1,4 +1,5 @@
 import styles from './CommentSection.module.css'
+import NewCommentForm from './NewCommentForm'
 
 const exampleComment = {
   author: "Commenter",
@@ -12,6 +13,7 @@ console.log(exampleComments);
 export default function CommentSection() {
   return (
     <div className={styles['comment-section']}>
+      <NewCommentForm />
       {exampleComments.map((comment) => (
         <div className={styles.comment}>
           <span>{comment.author}</span>
