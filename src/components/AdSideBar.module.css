@@ -1,0 +1,37 @@
+.ad {
+  text-align: center;
+  margin: 10px;
+}
+
+.side-bar {
+  height: 85vh;
+  overflow-y: auto; 
+}
+
+.side-bar *{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.side-bar div:first-child {
+  font-size: .7em;
+  font-style: italic;
+  color:rgb(66, 66, 66);
+  padding: 0 5px 0 5px;
+}
+
+.ad h3 {
+
+}
+
+.ad img {
+  height: 200px;
+  width: 200px;
+}
+
+.ad p {
+  font-size: .8em;
+  color: rgb(66, 66, 66);
+  width: 200px;
+  margin: 0 auto;
+}
