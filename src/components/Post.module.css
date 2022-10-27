@@ -42,6 +42,12 @@
   background: rgba(0,0,0,0.5);
 }
 
+.content {
+  border: 1pt dotted orangered;
+  border-radius: 10px;
+  padding: 4px;
+}
+
 .image {
   width: 30px;
   height: 30px;
@@ -49,4 +55,31 @@
 
 .downvote {
   transform: rotate(180deg);
+}
+
+.footer span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Author */
+.footer span:first-child {
+  font-style: italic;
+}
+/* Score */
+.controls span:first-child {
+  font-style: normal;
+  border-bottom: 1pt solid orangered;
+  border-top: 1pt solid orangered;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* Comments */
+.foot .controls span:last-child {
+
+}
+.foot .controls span:last-child:hover {
+  cursor: pointer;
 }

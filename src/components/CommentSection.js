@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import styles from './CommentSection.module.css'
 
 const exampleComment = {
   author: "Commenter",
@@ -11,12 +11,12 @@ console.log(exampleComments);
 
 export default function CommentSection() {
   return (
-    <div className="comment-section">
+    <div className={styles['comment-section']}>
       {exampleComments.map((comment) => (
-        <>
+        <div className={styles.comment}>
           <span>{comment.author}</span>
           <p>{comment.content}</p>  
-        </>
+        </div>
       ))}
     </div>
   )

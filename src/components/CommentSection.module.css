@@ -1,0 +1,26 @@
+.comment-section {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -15px;
+  padding: 5px;
+  border: 1pt dotted orangered;
+  border-top: none;
+}
+
+.comment {
+  border-bottom: 1pt dotted black;
+}
+
+.comment span {
+  color: orangered;
+  font-style: italic;
+  font-size: 1.1em;
+  font-weight: bold;
+
+}
+
+.comment p {
+  text-indent: 2em;
+  margin: 0;
+  margin-bottom: 5px;
+}
