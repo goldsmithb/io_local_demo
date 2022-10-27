@@ -30,17 +30,16 @@ export default function NewPostForm({ addNewPost }) {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div id={styles['top-bar']}>
+      <div className={styles['top-bar']}>
         <label className={styles.title}>
-          <span>Title:</span>
           <input 
             type="text"
             onChange={(e) => setTitle(e.target.value)}
-            value={title} 
-            className={styles.content}/>
+            value={title}
+            placeholder="Title..."
+            className={styles.title}/>
         </label>
         <label className={styles.type}>
-          <span>Post type:</span>
           <select onChange={(e) => setType(e.target.value)}>
             <option value="social">Social</option>
             <option value="market">Market</option>
@@ -49,14 +48,19 @@ export default function NewPostForm({ addNewPost }) {
         </label>
       </div>
 
-      <label>
-        <span>Content:</span>
+      <label className={styles.content}>
         <input 
           type="text" 
           onChange={(e) => setContent(e.target.value)}
+          placeholder="Content..."
           value={content} />
       </label>
-      <button>Submit</button>
+
+      <div className={styles.buttons}>
+        <button type="button">Add Image</button>  
+        <button>Submit</button>
+      </div>
+
     </form>
   )
 }
