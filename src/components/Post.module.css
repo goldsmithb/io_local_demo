@@ -3,23 +3,23 @@
   padding: 10px;
 }
 
-.post__header, .post__footer, .post__controls {
+.header, .footer, .controls {
   display: flex;
   justify-content: space-between;
 }
 
 /* style post titles */
-.post__header span {
+.header span {
   font-size: 1.5em;
   font-weight: 700;
 }
 
-.post__header-icon {
+.header-icon {
   width: 30px;
   height: 30px;
 }
 
-.post__controls {
+.controls {
   gap: 5px;
 }
 
@@ -39,7 +39,7 @@
   background: rgba(0,0,0,0.5);
 }
 
-#image {
+.image {
   width: 30px;
   height: 30px;
 }

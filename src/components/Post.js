@@ -14,12 +14,12 @@ Post content:
 */
 
 import { useState } from 'react'
-import './Post.css'
+import styles from './Post.module.css'
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 import CommentSection from './CommentSection'
 
-export default function Post({ post, key, isFullscreen, clickFullscreen }) {
+export default function Post({ post, isFullscreen, clickFullscreen }) {
   const [id, setId] = useState(post.id);
   const [title, setTitle] = useState(post.title);
   const [author, setAuthor] = useState(post.author);
@@ -30,18 +30,23 @@ export default function Post({ post, key, isFullscreen, clickFullscreen }) {
 
   return (
     <>
-    <div key={id} className={"post wireframe " + (isFullscreen ? "fullscreen" : "")}>
-      <div className="post__header">
-        <div className="post__header-icon wireframe">Icon</div>
+    <div key={id} className={styles.post + (isFullscreen ? " fullscreen wireframe" : " wireframe")}>
+      <div className={styles.header}>
+        <div className={styles['header-icon'] +" wireframe"}>Icon</div>
         <span>{title}</span>
-        <input onClick={clickFullscreen} type="image" id="image" alt="Full screen" src={fullscreenButtonImg} />
+        <input 
+          onClick={clickFullscreen} 
+          type="image" 
+          className={styles.image} 
+          alt="Full screen" 
+          src={fullscreenButtonImg} />
       </div>
 
-      <div className="post__content">{content}</div>
+      <div className={styles.content}>{content}</div>
 
-      <div className="post__footer">
+      <div className={styles.footer}>
         <span>{author}</span>
-        <div className="post__controls">
+        <div className={styles.controls}>
           <span className="score">{score}</span>
           <span onClick={() => setScore(score + 1)}>upvote</span>
           <span onClick={() => setScore(score - 1)}>downvote</span>
