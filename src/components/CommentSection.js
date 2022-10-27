@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './CommentSection.module.css'
 import NewCommentForm from './NewCommentForm'
 
@@ -6,14 +7,20 @@ const exampleComment = {
   content: "I love this post."
 }
 
-const exampleComments = new Array(10);
-exampleComments.fill(exampleComment);
-console.log(exampleComments);
+const exampleCommentsList = new Array(10);
+exampleCommentsList.fill(exampleComment);
+console.log(exampleCommentsList);
 
 export default function CommentSection() {
+  const [exampleComments, setExampleComments] = useState(exampleCommentsList);
+
+  const addNewComment = (newComment) => {
+    setExampleComments((oldComments) => [newComment, ...oldComments]);
+  }
+
   return (
     <div className={styles['comment-section']}>
-      <NewCommentForm />
+      <NewCommentForm addNewComment={addNewComment}/>
       {exampleComments.map((comment) => (
         <div className={styles.comment}>
           <span>{comment.author}</span>
