@@ -77,7 +77,9 @@ export default function NewsFeed() {
 
   return (
     <div className={styles['news-feed']}>
-      <div className={styles['form-field'] + " " + (showNewPostForm ? "focused" : "")}>
+      <div 
+        className={styles['form-field'] + " " + (showNewPostForm ? "focused" : "")}
+        style={{width: showNewPostForm ? "90%" : "70%"}}>
         {!showNewPostForm && (
           <input
             type="text" 
