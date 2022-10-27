@@ -77,6 +77,7 @@ export default function NewsFeed() {
 
   return (
     <div className={styles['news-feed']}>
+      <div className={styles.welcome}>Welcome to I/O Local. Get plugged in.</div>
       <div 
         className={styles['form-field'] + " " + (showNewPostForm ? "focused" : "")}
         style={{width: showNewPostForm ? "90%" : "70%"}}>

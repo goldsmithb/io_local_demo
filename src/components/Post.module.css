@@ -77,9 +77,6 @@
   border-top-right-radius: 5px;
 }
 /* Comments */
-.foot .controls span:last-child {
-
-}
-.foot .controls span:last-child:hover {
+.controls span:last-child {
   cursor: pointer;
 }
