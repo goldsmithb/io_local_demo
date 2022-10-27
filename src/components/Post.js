@@ -16,6 +16,7 @@ Post content:
 import { useState } from 'react'
 import styles from './Post.module.css'
 import fullscreenButtonImg from '../media/fullscreen_button.png';
+import upvoteImg from '../media/upvote.png';
 import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 import CommentSection from './CommentSection'
 
@@ -48,8 +49,18 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
         <span>{author}</span>
         <div className={styles.controls}>
           <span className="score">{score}</span>
-          <span onClick={() => setScore(score + 1)}>upvote</span>
-          <span onClick={() => setScore(score - 1)}>downvote</span>
+          <input 
+            onClick={() => setScore(score + 1)} 
+            type="image" 
+            className={styles.image} 
+            alt="upvote" 
+            src={upvoteImg} />  
+          <input 
+            onClick={() => setScore(score - 1)} 
+            type="image" 
+            className={styles.image + " "  + styles.downvote} 
+            alt="upvote" 
+            src={upvoteImg} />  
           <span onClick={()=> setShowComments(showComments? false: true)}>comments</span>
         </div>
       </div>
