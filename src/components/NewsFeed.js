@@ -61,7 +61,7 @@ const examplePostList = [{
   score: 100
 }]
 
-export default function NewsFeed() {
+export default function NewsFeed({ changePage }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showNewPostForm, setShowNewPostForm] = useState(false);
   const [examplePosts, setExamplePosts] = useState(examplePostList);

@@ -35,3 +35,7 @@
 .caret-down::before {
   transform: rotate(90deg);
 }
+
+.profile {
+  cursor: pointer;
+}

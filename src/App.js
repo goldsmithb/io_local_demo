@@ -5,8 +5,12 @@ import NewsFeed from './components/NewsFeed'
 import Navbar from './components/Navbar';
 import NavSideBar from './components/NavSideBar'
 import AdSideBar from './components/AdSideBar';
+import Profile from './components/Profile'
 
 function App() {
+  const [page, setPage] = React.useState("newsfeed");
+  const changePage = (page) => setPage(page); 
+
   return (
     <React.Fragment>
 
@@ -14,10 +18,12 @@ function App() {
 
       <main>
         <article id="main">
-          <NewsFeed />
+          {page === "newsfeed" && <NewsFeed />}
+          {page === "profile" && <Profile changePage={changePage}/>}
+          {/* ^^ we can have a go back button on the prof page*/}
         </article>
         <aside className="sidebar1">
-          <NavSideBar />
+          <NavSideBar changePage={changePage}/>
         </aside>
         <aside className="sidebar2">
            <AdSideBar /> 
