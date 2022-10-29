@@ -13,3 +13,9 @@
 .back-button {
   cursor: pointer;
 }
+
+.profile h2 {
+  font-size: 2em;
+  font-weight: 900;
+  border-bottom: 1pt solid orangered;
+}
