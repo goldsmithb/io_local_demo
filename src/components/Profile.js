@@ -8,7 +8,9 @@ export default function Profile({ changePage }) {
         onClick={() => changePage("newsfeed")}>
         Go back</span>
       <div className={styles['top-bar']}>
-        <img alt="Profile picture"/>
+        <img 
+          src="/exampleProfilePicture.png" 
+          alt="Profile picture"/>
         <div className={styles.bio}>
           <h2>John Doe</h2>
           <p>Read all about me!</p>
