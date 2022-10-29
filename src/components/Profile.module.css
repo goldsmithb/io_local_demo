@@ -1,7 +1,15 @@
+.profile {
+  height: 85vh;
+  overflow-y: auto;
+  margin: 10px 0;
+}
 .top-bar {
   display: flex;
 }
 .bio {
   display: flex;
   flex-direction: column;
+}
+.back-button {
+  cursor: pointer;
 }
