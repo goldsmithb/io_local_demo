@@ -3,6 +3,16 @@ import styles from './NewPostForm.module.css'
 
 /**BUG: reset form does not reset the type state */
 
+const numToDay = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday"
+};
+
 export default function NewPostForm({ addNewPost }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -14,6 +24,17 @@ export default function NewPostForm({ addNewPost }) {
     setType("");
   }
 
+  const getDateString = () => {
+    let date = new Date()
+      .toString()
+      .split(" ");
+    date[0] += ',';
+    date[3] += " at";
+    return date
+      .slice(0, 5)
+      .join(" ")
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newPost = {
@@ -22,7 +43,8 @@ export default function NewPostForm({ addNewPost }) {
       author: "current user",
       content: content,
       type: type,
-      score: 0
+      score: 0,
+      date: getDateString()
     }
     addNewPost(newPost);
     resetForm();

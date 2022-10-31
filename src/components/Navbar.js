@@ -4,7 +4,7 @@ export default function Navbar({ changePage }){
   console.log("rendering navbar - Navbar");
   return (
     <header className={styles.header}>
-      <div className={styles['header-logo']}>Logo</div>
+      <div className={styles['header-logo'] + " icon"}>Logo</div>
       <ul className={styles['header-ul'] + " normal-text"}>
         <li><a href="#" onClick={() => changePage("newsfeed")}>I/O Local</a></li>
         <li><a href="#" onClick={() => changePage("profile")}>My Profile</a></li>

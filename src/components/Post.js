@@ -3,13 +3,14 @@ A Basic Post Component
 
 Post will have a minimum width and height but otherwise flexibility
 
-Post content:
+Post Object:
 {
     title: "Example",
     author: "Bob S.",
     content: ""...",
     type: "social" | "market" | "request",
-    score: int
+    score: int,
+    date: string
   }
 */
 
@@ -27,6 +28,7 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
   const [author, setAuthor] = useState(post.author);
   const [content, setContent] = useState(post.content);
   const [type, setType] = useState(post.type);
+  const [date, setDate] = useState(post.date);
   const [score, setScore] = useState(post.score);
   const [showComments, setShowComments] = useState(false);
 
@@ -34,13 +36,8 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
     "social": "#ffcc8c",
     "market": "#8cffdb",
     "request": "#ff8cee"
-  }
-
+  };
   const getBGColorRule = (type) => BGColors[type];
-  // {
-  //   let color = BGColors[type];
-  //   return ({{backgroundColor: color});
-  // }
 
   const jsxPost = (
     <>
@@ -64,7 +61,10 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
       <div className={styles.content}>{content}</div>
 
       <div className={styles.footer}>
-        <span>{author}</span>
+        <div className={styles['flexbox-vertical']}>
+          <span>{author}</span>
+          <span className={styles.date}>{date}</span>
+        </div>
         <div className={styles.controls}>
           <span className="score">{score}</span>
           <input 

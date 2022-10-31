@@ -77,3 +77,16 @@
 .controls span:last-child {
   cursor: pointer;
 }
+
+.date {
+  font-size: .8em;
+  color: rgb(79, 79, 79);
+  padding-left: 3px;
+}
+
+.flexbox-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
