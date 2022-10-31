@@ -21,7 +21,7 @@ export default function NewPostForm({ addNewPost }) {
       id: Math.floor(Math.random()*1000),
       author: "current user",
       content: content,
-      type: "social",
+      type: type,
       score: 0
     }
     addNewPost(newPost);

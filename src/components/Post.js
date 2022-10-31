@@ -30,12 +30,26 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
   const [score, setScore] = useState(post.score);
   const [showComments, setShowComments] = useState(false);
 
+  const BGColors = {
+    "social": "#ffcc8c",
+    "market": "#8cffdb",
+    "request": "#ff8cee"
+  }
+
+  const getBGColorRule = (type) => BGColors[type];
+  // {
+  //   let color = BGColors[type];
+  //   return ({{backgroundColor: color});
+  // }
+
   const jsxPost = (
     <>
     <div 
       key={id} 
       className={styles.post + " " + (isFullscreen ? styles.fullscreen : " ")}
-      styles={showComments ? {marginBottom: "-100px"} : ""}>
+      style={{
+        backgroundColor: getBGColorRule(type)
+      }}>
       <div className={styles.header}>
         <div className="icon">Icon</div>
         <span>{title}</span>
