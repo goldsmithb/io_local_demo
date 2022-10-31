@@ -1,5 +1,12 @@
 import styles from './Profile.module.css'
 
+/* A profile has
+  name,
+  bio,
+  post history
+  add friend/message button
+*/
+
 export default function Profile({ changePage }) {
   return (
     <div className={styles.profile}>
@@ -17,6 +24,7 @@ export default function Profile({ changePage }) {
           <h2>John Doe</h2>
           <p>Read all about me!</p>
         </div>
+        <button>Add Friend/Send Message</button>
       </div>
 
       <div>Post history</div>
