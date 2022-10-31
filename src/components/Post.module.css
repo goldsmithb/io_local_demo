@@ -1,6 +1,8 @@
 .post {
   margin: 20px 60px;
   padding: 15px 0;
+  border: solid 1pt black;
+  border-radius: 10px;
 }
 
 .header, .footer, .controls {
@@ -20,6 +22,7 @@
 .header-icon {
   width: 30px;
   height: 30px;
+  border: double 2pt orangered;
 }
 
 .controls {
@@ -28,8 +31,8 @@
 
 .fullscreen {
   padding: 30px;
-  max-width: 480px;
-  margin: 200px auto;
+  max-width: 800px;
+  margin: 100px auto;
   background: #fff;
   border-radius: 10px;
 }

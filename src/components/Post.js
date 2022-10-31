@@ -14,6 +14,7 @@ Post content:
 */
 
 import { useState } from 'react'
+import ReactDOM from 'react-dom'
 import styles from './Post.module.css'
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import upvoteImg from '../media/upvote.png';
@@ -29,11 +30,14 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
   const [score, setScore] = useState(post.score);
   const [showComments, setShowComments] = useState(false);
 
-  return (
+  const jsxPost = (
     <>
-    <div key={id} className={styles.post + (isFullscreen ? " fullscreen wireframe" : " wireframe")}>
+    <div 
+      key={id} 
+      className={styles.post + " " + (isFullscreen ? styles.fullscreen : " ")}
+      styles={showComments && {marginTop: "-100px"}}>
       <div className={styles.header}>
-        <div className={styles['header-icon'] +" wireframe"}>Icon</div>
+        <div className={styles['header-icon']}>Icon</div>
         <span>{title}</span>
         <input 
           onClick={clickFullscreen} 
@@ -66,7 +70,21 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
       </div>
     </div>
     {showComments && <CommentSection />}
-
     </>
-  )
+  );
+
+  // full screen mode
+  if (isFullscreen) {
+    return ReactDOM.createPortal(
+      <div className={styles['fullscreen-backdrop']}>
+        {jsxPost}
+      </div>
+    , document.body)
+  } else if (!isFullscreen) {
+    return (
+      <>
+        {jsxPost}
+      </>
+    )
+  }
 }

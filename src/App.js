@@ -32,7 +32,7 @@ function App() {
       </main>
         
       <footer>
-        <p>footer</p>
+        <p>Bradley Goldsmith 2022</p>
       </footer>
 
     </React.Fragment>

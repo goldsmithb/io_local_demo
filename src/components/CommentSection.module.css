@@ -5,6 +5,7 @@
   padding: 5px;
   border: 1pt dotted orangered;
   border-top: none;
+  background-color: rgb(255, 187, 162);
 }
 
 .comment {
