@@ -35,9 +35,9 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
     <div 
       key={id} 
       className={styles.post + " " + (isFullscreen ? styles.fullscreen : " ")}
-      styles={showComments && {marginTop: "-100px"}}>
+      styles={showComments ? {marginBottom: "-100px"} : ""}>
       <div className={styles.header}>
-        <div className={styles['header-icon']}>Icon</div>
+        <div className="icon">Icon</div>
         <span>{title}</span>
         <input 
           onClick={clickFullscreen} 

@@ -1,4 +1,6 @@
-const styles = {
+import styles from './Navbar.module.css';
+
+const gstyles = {
   header: {
     backgroundColor: "#b8b8b8",
     color: 'white',
@@ -23,13 +25,14 @@ const styles = {
   }
 }
 
-export default function Navbar(){
+export default function Navbar({ changePage }){
+  console.log("rendering navbar - Navbar");
   return (
-    <header style={styles.header}>
-      <div className="wireframe" style={styles.header_logo}>Logo</div>
-      <ul style={styles.header_ul} className="normal-text">
-        <li><a href="#">I/O Local</a></li>
-        <li><a href="#">My Profile</a></li>
+    <header className={styles.header}>
+      <div className={styles['header-logo']}>Logo</div>
+      <ul className={styles['header-ul'] + " normal-text"}>
+        <li><a href="#" onClick={() => changePage("newsfeed")}>I/O Local</a></li>
+        <li><a href="#" onClick={() => changePage("profile")}>My Profile</a></li>
         <li><a href="#">Account Settings</a></li>
       </ul>
     </header>

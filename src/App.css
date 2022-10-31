@@ -63,3 +63,9 @@ aside {
 footer {
   background-color: #b8b8b8;
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border: double 2pt orangered;
+}

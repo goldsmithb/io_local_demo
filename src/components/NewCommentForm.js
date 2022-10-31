@@ -20,8 +20,8 @@ export default function NewCommentForm({ addNewComment }) {
   console.log(content)
 
   return (
-  <form onSubmit={handleSubmit}>
-    <span>Icon</span>
+  <form onSubmit={handleSubmit} className={styles.form}>
+    <span className='icon'>Icon</span>
     <input 
       type="text" 
       value={content} 

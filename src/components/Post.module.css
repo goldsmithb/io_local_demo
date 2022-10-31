@@ -19,12 +19,6 @@
   font-weight: 700;
 }
 
-.header-icon {
-  width: 30px;
-  height: 30px;
-  border: double 2pt orangered;
-}
-
 .controls {
   gap: 5px;
 }

@@ -15,7 +15,8 @@ function App() {
   return (
     <React.Fragment>
 
-      <Navbar />
+      {console.log("rendering navbar - app")}
+      <Navbar changePage={changePage}/>
 
       <main>
         <article id="main">

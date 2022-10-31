@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  padding-bottom: 10px;
+  border-bottom: dashed 3pt orange;
+}
+
+.form input {
+  width: 70%
+}
