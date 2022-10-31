@@ -3,10 +3,12 @@ import styles from './Profile.module.css'
 export default function Profile({ changePage }) {
   return (
     <div className={styles.profile}>
-      <span 
-        className={styles['back-button']} 
-        onClick={() => changePage("newsfeed")}>
-        Go back</span>
+      <input 
+          onClick={() => changePage("newsfeed")}
+          type="image" 
+          className={styles['back-button']} 
+          alt="Back Arrow Navigation" 
+          src={"/backArrow.png"} />
       <div className={styles['top-bar']}>
         <img 
           src="/exampleProfilePicture.png" 
@@ -19,6 +21,5 @@ export default function Profile({ changePage }) {
 
       <div>Post history</div>
     </div>
-
   )
 }
