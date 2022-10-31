@@ -36,6 +36,7 @@
   transform: rotate(90deg);
 }
 
-.profile {
+.nav-button {
   cursor: pointer;
+  color: blue;
 }

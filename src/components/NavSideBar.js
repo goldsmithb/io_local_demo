@@ -1,15 +1,22 @@
 import { useState } from 'react';
 import styles from './NavSideBar.module.css'
 
-export default function NavSideBar({ changePage }) {
+export default function NavSideBar({ page, changePage }) {
   const [showGroups, setShowGroups] = useState(false);
 
   return (
     <ul className={styles.sidebar}>
       <li><span 
           onClick={() => changePage("profile")} 
-          className={styles.profile}>My Profile</span>
+          className={styles['nav-button']}>My Profile</span>
+      </li>
+      {(page === "profile") && (
+        <li>
+          <span 
+            className={styles['nav-button']}
+            onClick={() => changePage("newsfeed")}>Newsfeed</span>
         </li>
+      )}
       <li>My Friends</li>
       <li><span 
             className={styles.caret + " " + (showGroups ? styles['caret-down'] : "")}

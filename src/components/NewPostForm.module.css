@@ -29,7 +29,7 @@
   justify-content: space-between;
   width: 100%;
 }
-button:last-child {
+.buttons button:last-child {
   margin-top: -20px;
   margin-right: -20px;
 }

@@ -8,6 +8,7 @@ import AdSideBar from './components/AdSideBar';
 import Profile from './components/Profile'
 
 function App() {
+  // pages are: newsfeed | profile
   const [page, setPage] = React.useState("newsfeed");
   const changePage = (page) => setPage(page); 
 
@@ -23,7 +24,7 @@ function App() {
           {/* ^^ we can have a go back button on the prof page*/}
         </article>
         <aside className="sidebar1">
-          <NavSideBar changePage={changePage}/>
+          <NavSideBar page={page} changePage={changePage}/>
         </aside>
         <aside className="sidebar2">
            <AdSideBar /> 
