@@ -2,6 +2,7 @@ import { useState } from 'react';
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import Post from './Post'
 import NewPostForm from './NewPostForm'
+import NewsFeedFilter from './NewsFeedFilter.js'
 import styles from './NewsFeed.module.css'
 
 const examplePostList = [{
@@ -10,7 +11,8 @@ const examplePostList = [{
   author: "Bob S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "social",
-  score: 0
+  score: 0,
+  date: new Date().toString(),
 },
 {
   id: Math.floor(Math.random()*1000),
@@ -18,7 +20,8 @@ const examplePostList = [{
   author: "Karen S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "market",
-  score: 100
+  score: 100,
+  date: new Date().toString()
 },
 {
   id: Math.floor(Math.random()*1000),
@@ -26,7 +29,8 @@ const examplePostList = [{
   author: "Karen S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "market",
-  score: 100
+  score: 100,
+  date: new Date().toString()
 },
 {
   id: Math.floor(Math.random()*1000),
@@ -34,7 +38,8 @@ const examplePostList = [{
   author: "Karen S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "market",
-  score: 100
+  score: 100,
+  date: new Date().toString()
 },
 {
   id: Math.floor(Math.random()*1000),
@@ -42,7 +47,8 @@ const examplePostList = [{
   author: "Karen S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "market",
-  score: 100
+  score: 100,
+  date: new Date().toString()
 },
 {
   id: Math.floor(Math.random()*1000),
@@ -50,7 +56,8 @@ const examplePostList = [{
   author: "Karen S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "market",
-  score: 100
+  score: 100,
+  date: new Date().toString()
 },
 {
   id: Math.floor(Math.random()*1000),
@@ -58,12 +65,15 @@ const examplePostList = [{
   author: "Karen S.",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec velit non lorem ultrices aliquet non eu risus. Vivamus euismod sapien sit amet eros gravida pellentesque vitae at sem. Nam at aliquam sapien. Aliquam et tortor sit amet urna laoreet dignissim. Mauris imperdiet blandit varius. Sed in varius quam. Morbi volutpat porta dolor, et ornare augue fringilla sit amet. Praesent non urna orci. Duis orci nisi, congue sed est non, fringilla volutpat elit. Curabitur lacus ipsum, dictum ac dolor non, viverra dignissim nisi.",
   type: "market",
-  score: 100
+  score: 100,
+  date: new Date().toString()
 }]
 
 export default function NewsFeed({ changePage }) {
-  const [showNewPostForm, setShowNewPostForm] = useState(false);
   const [examplePosts, setExamplePosts] = useState(examplePostList);
+  const [showNewPostForm, setShowNewPostForm] = useState(false);
+  const [filter, setFilter] = useState("none");
+  // filter = "none" | "social" | "market" | "request"
 
   const addNewPost = (newPost) => {
     setExamplePosts((prevPosts) => [newPost, ...prevPosts]);
@@ -72,13 +82,7 @@ export default function NewsFeed({ changePage }) {
 
   return (
     <div className={styles['news-feed']}>
-      <label className={styles.filter}>
-        <select >
-          <option value="social">Social</option>
-          <option value="market">Market</option>
-          <option value="request">Request</option>
-        </select>
-      </label>
+      <NewsFeedFilter setFilter={setFilter}/>
       <div className={styles.welcome}>Welcome to I/O Local. Get plugged in.</div>
       <div 
         className={styles['form-field'] + " " + (showNewPostForm ? "focused" : "")}

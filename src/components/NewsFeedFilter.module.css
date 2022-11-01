@@ -1,0 +1,8 @@
+.filter {
+  display: flex;
+  gap: 5px;
+  margin-left: 5px;
+}
+.filter *:hover {
+    cursor: pointer;
+}
