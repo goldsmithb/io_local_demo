@@ -21,11 +21,15 @@ export default function NewCommentForm({ addNewComment }) {
 
   return (
   <form onSubmit={handleSubmit} className={styles.form}>
-    <span className='icon'>Icon</span>
-    <input 
-      type="text" 
-      value={content} 
-      onChange={(e) => setContent(e.target.value)}/>
+    <label>
+      <span className='icon'>Icon</span>
+    </label>
+    <label className={styles.content}>
+      <input 
+        type="text" 
+        value={content} 
+        onChange={(e) => setContent(e.target.value)}/>
+    </label>
     <button>Submit</button>
   </form>
   )

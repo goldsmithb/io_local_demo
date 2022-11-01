@@ -6,6 +6,10 @@
   border-bottom: dashed 3pt orange;
 }
 
+.content {
+  width: 70%;
+}
 .form input {
-  width: 70%
+  width: 100%;
+  height: 4em;
 }

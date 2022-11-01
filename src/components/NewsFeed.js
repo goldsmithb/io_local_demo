@@ -72,6 +72,13 @@ export default function NewsFeed({ changePage }) {
 
   return (
     <div className={styles['news-feed']}>
+      <label className={styles.filter}>
+        <select >
+          <option value="social">Social</option>
+          <option value="market">Market</option>
+          <option value="request">Request</option>
+        </select>
+      </label>
       <div className={styles.welcome}>Welcome to I/O Local. Get plugged in.</div>
       <div 
         className={styles['form-field'] + " " + (showNewPostForm ? "focused" : "")}

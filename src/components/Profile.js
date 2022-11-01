@@ -35,5 +35,4 @@ export default function Profile({ changePage }) {
 
 // TODODODODOO
 // - add filters to newsfeed 
-// - center post history
 // - add exmaple posts
