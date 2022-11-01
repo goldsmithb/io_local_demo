@@ -33,9 +33,7 @@ export default function Profile({ changePage }) {
   )
 }
 
-// TODODODODOD
-// - fulscreen opens same post on NewsFeed
-// - change myprofile in navsidebar to orange when on my profile
+// TODODODODOO
 // - add filters to newsfeed 
 // - center post history
 // - add exmaple posts

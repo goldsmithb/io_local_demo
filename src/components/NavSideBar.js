@@ -14,7 +14,10 @@ export default function NavSideBar({ page, changePage }) {
         <li>
           <span 
             className={styles['nav-button']}
-            onClick={() => changePage("newsfeed")}>Newsfeed</span>
+            onClick={() => changePage("newsfeed")}
+            style={{color: "orangered"}}>
+            Newsfeed
+          </span>
         </li>
       )}
       <li>My Friends</li>
