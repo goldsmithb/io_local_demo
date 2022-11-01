@@ -7,6 +7,9 @@ Demo of the newsfeed and user profile pages for a social media startup. The purp
 This is a Single Page Application bootstrapped with the Create React App Node.js package.
 
 <br />
+<br />
+<br />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
