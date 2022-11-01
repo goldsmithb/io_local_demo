@@ -35,4 +35,5 @@ export default function Profile({ changePage }) {
 
 // TODODODODOO
 // - add filters to newsfeed 
+  // CURRENT TODO : how to change filter state from Filter component
 // - add exmaple posts

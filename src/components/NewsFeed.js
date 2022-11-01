@@ -72,14 +72,14 @@ const examplePostList = [{
 export default function NewsFeed({ changePage }) {
   const [examplePosts, setExamplePosts] = useState(examplePostList);
   const [showNewPostForm, setShowNewPostForm] = useState(false);
-  const [filter, setFilter] = useState("none");
-  // filter = "none" | "social" | "market" | "request"
+  const [filter, setFilter] = useState("");
+  // filter = "" | "social" | "market" | "request"
 
   const addNewPost = (newPost) => {
     setExamplePosts((prevPosts) => [newPost, ...prevPosts]);
     setShowNewPostForm(false);
   }
-
+  console.log("filter",filter);
   return (
     <div className={styles['news-feed']}>
       <NewsFeedFilter setFilter={setFilter}/>
@@ -97,10 +97,12 @@ export default function NewsFeed({ changePage }) {
         {showNewPostForm && <NewPostForm addNewPost={addNewPost} />}
       </div>
       
-      {examplePosts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))
-      // we still need some conditional things for different post types
+      {!filter && examplePosts
+        .map((post) => ( <Post key={post.id} post={post} />))
+      }
+      {filter && examplePosts
+        .filter((el) => el === filter)
+        .map((post) => ( <Post key={post.id} post={post} />))
       }
     </div>
   )
