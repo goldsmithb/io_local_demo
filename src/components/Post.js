@@ -19,19 +19,15 @@ import ReactDOM from 'react-dom'
 import styles from './Post.module.css'
 import fullscreenButtonImg from '../media/fullscreen_button.png';
 import upvoteImg from '../media/upvote.png';
-import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 import CommentSection from './CommentSection'
 
-export default function Post({ post, isFullscreen, clickFullscreen }) {
-  const [id, setId] = useState(post.id);
-  const [title, setTitle] = useState(post.title);
-  const [author, setAuthor] = useState(post.author);
-  const [content, setContent] = useState(post.content);
-  const [type, setType] = useState(post.type);
-  const [date, setDate] = useState(post.date);
+export default function Post({ post }) {
   const [score, setScore] = useState(post.score);
   const [showComments, setShowComments] = useState(false);
-
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const clickFullscreen = () => { 
+    isFullscreen ? setIsFullscreen(false) : setIsFullscreen(true);
+  }
   const BGColors = {
     "social": "#ffcc8c",
     "market": "#8cffdb",
@@ -42,14 +38,14 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
   const jsxPost = (
     <>
     <div 
-      key={id} 
+      key={post.id} 
       className={styles.post + " " + (isFullscreen ? styles.fullscreen : " ")}
       style={{
-        backgroundColor: getBGColorRule(type)
+        backgroundColor: getBGColorRule(post.type)
       }}>
       <div className={styles.header}>
         <div className="icon">Icon</div>
-        <span>{title}</span>
+        <span>{post.title}</span>
         <input 
           onClick={clickFullscreen} 
           type="image" 
@@ -58,12 +54,12 @@ export default function Post({ post, isFullscreen, clickFullscreen }) {
           src={fullscreenButtonImg} />
       </div>
 
-      <div className={styles.content}>{content}</div>
+      <div className={styles.content}>{post.content}</div>
 
       <div className={styles.footer}>
         <div className={styles['flexbox-vertical']}>
-          <span>{author}</span>
-          <span className={styles.date}>{date}</span>
+          <span>{post.author}</span>
+          <span className={styles.date}>{post.date}</span>
         </div>
         <div className={styles.controls}>
           <span className="score">{score}</span>

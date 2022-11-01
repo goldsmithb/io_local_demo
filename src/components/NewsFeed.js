@@ -62,13 +62,8 @@ const examplePostList = [{
 }]
 
 export default function NewsFeed({ changePage }) {
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [showNewPostForm, setShowNewPostForm] = useState(false);
   const [examplePosts, setExamplePosts] = useState(examplePostList);
-
-  const clickFullscreen = () => { 
-    isFullscreen ? setIsFullscreen(false) : setIsFullscreen(true);
-  }
 
   const addNewPost = (newPost) => {
     setExamplePosts((prevPosts) => [newPost, ...prevPosts]);
@@ -92,9 +87,7 @@ export default function NewsFeed({ changePage }) {
       </div>
       
       {examplePosts.map((post) => (
-        <Post key={post.id} 
-          post={post} isFullscreen={isFullscreen} 
-          clickFullscreen={clickFullscreen}/>
+        <Post key={post.id} post={post} />
       ))
       // we still need some conditional things for different post types
       }

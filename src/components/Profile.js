@@ -1,3 +1,4 @@
+import NewsFeed from './NewsFeed'
 import styles from './Profile.module.css'
 
 /* A profile has
@@ -27,7 +28,14 @@ export default function Profile({ changePage }) {
         <button>Add Friend/Send Message</button>
       </div>
 
-      <div>Post history</div>
+      <div className={styles['post-history']}>Post history</div>
     </div>
   )
 }
+
+// TODODODODOD
+// - fulscreen opens same post on NewsFeed
+// - change myprofile in navsidebar to orange when on my profile
+// - add filters to newsfeed 
+// - center post history
+// - add exmaple posts

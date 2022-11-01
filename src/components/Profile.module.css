@@ -25,6 +25,7 @@
   font-weight: 900;
   border-bottom: 1pt solid orangered;
   margin-top: 0;
+  width: 100%;
 }
 .top-bar img {
   height: 100px;
@@ -37,4 +38,9 @@
   margin-left: auto;
   margin-right: 10px;
   height: 2em;
+}
+
+.post-history {
+  margin: 10px auto;
+  width: 80%;
 }
