@@ -1,3 +1,12 @@
+# I/O Local Demo
+
+## Description
+Demo of the newsfeed and user profile pages for a social media startup. The purpose of this project is to provide the organization with an interactive, visual demo of the site in order to organize and make more targeted discussions about the business model, technical needs, and design desires
+
+## Technical Description
+This is a Single Page Application bootstrapped with the Create React App Node.js package.
+
+<br />
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
